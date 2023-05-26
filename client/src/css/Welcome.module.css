@@ -1,0 +1,84 @@
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.fondo{
+    width: 130%;
+    height: 116%;
+    object-fit: cover;
+}
+
+.content{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+.welcome{
+    display: flex;
+    width: 25rem;
+    height: 20rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    margin-right: 4%;
+    padding-bottom: 1%;
+    color: white;
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, .5);
+    
+}
+
+
+.h{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3.2rem;
+    margin-bottom: 4%;
+}
+
+.p{
+    margin-top: 0%;
+    margin-left: 10%;
+    margin-right: 10%;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+font-size: 1rem;
+}
+
+.button{
+    background-color: #d29b04; /* Color de fondo */
+  border: none; /* Quitamos el borde */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espacio alrededor del texto */
+  text-align: center; /* Centramos el texto */
+  text-decoration: none; /* Quitamos el subrayado */
+  display: inline-block; /* Mostramos el botón en línea */
+  font-size: 16px; /* Tamaño del texto */
+  margin: 10px 5px; /* Margen exterior */
+  cursor: pointer; /* Cambiamos el cursor al pasar por encima */
+  border-radius: 25px; /* Añadimos un radio de borde */
+  transition-duration: 0.4s; /* Duración de la transición */
+}
+
+.button:hover {
+    background-color: #db8c37; /* Color de fondo al pasar por encima */
+  }
+

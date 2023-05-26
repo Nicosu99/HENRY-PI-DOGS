@@ -28,22 +28,22 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
 
-    maxWeight: {
-      type: DataTypes.INTEGER,
+    weightMin: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
 
-    minWeight: {
-      type: DataTypes.INTEGER,
+    weightMax: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
 
     averageWeight: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
 
-    lifeSpan: {
+    life_span: {
       type: DataTypes.STRING,
       allowNull: false,
     },

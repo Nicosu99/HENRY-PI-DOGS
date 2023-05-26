@@ -1,0 +1,29 @@
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 300px;
+  }
+  
+  .content button {
+    padding: 10px 20px;
+    background-color: #3f51b5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .content button:hover {
+    background-color: #2c3e8c;
+  }
+  

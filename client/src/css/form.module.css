@@ -1,0 +1,68 @@
+/* styles.module.css */
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  span {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .temperament-container {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+  
+  .temperament-container p {
+    margin-right: 0.5rem;
+  }
+  
+  .temperament-container button {
+    background-color: #dc3545;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .temperament-container button:hover {
+    background-color: #c82333;
+  }
+  
+  

@@ -30,15 +30,18 @@ const getBreedByIdHandler = async (req, res) => {
     }
 }
 
-const createNewDogHandler = async (req, res) => {
-    let {weightMin, weightMax, height, name, lifeSpan, image, temperaments, fromDb} = req.body;
+const createNewDogHandler = async (req, res) =>{
+    let { weightMin, weightMax, height, name, life_span, image, temperament, from_DB} =
+      req.body;
     try {
-        await createNewDog(weightMin,weightMax,height,name,lifeSpan,image,temperaments);
-        res.status(201).send("New dog successfully created")
+      // espera los datos
+      await createNewDog(weightMin, weightMax, height, name, life_span, image, temperament);
+      res.status(200).send("Nuevo perrito creado perfectamente");
+      // si todo salió bien 200 OK
     } catch (error) {
-        res.status(400).json({error:error.message})
+      res.status(400).json({ error: error.message });
     }
-}
+  };
 
 module.exports ={
     getBreedsHandler,

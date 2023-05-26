@@ -40,7 +40,7 @@ const getBreedsFromApi = async () => {
             averageWeight: averageWeight,
             height: el.height,
             name: el.name,
-            lifeSpan: el.lifeSpan,
+            life_span: el.life_span,
             image: el.image.url,
             temperament: el.temperament
         }
@@ -65,7 +65,7 @@ const getBreedsFromDb = async () => {
         averageWeight: (Number(el.weightMax) + Number(el.weightMin))/2,
         height: el.height,
         name: el.name,
-        lifeSpan: el.lifeSpan,
+        life_span: el.life_span,
         image: el.image,
         temperament: el.Temperaments? el.Temperaments.map (el=> el.name).join(", "):"Happy",
         created: true,
@@ -115,7 +115,7 @@ const getBreedById = async (id, origin) => {
                     averageWeight: (Number(dogDb.weightMax) + Number(dogDb.weightMin)) /2,
 					height: dogDb.height,
 					name: dogDb.name,
-					lifeSpan: dogDb.lifeSpan,
+					life_span: dogDb.life_span,
 					image: dogDb.image,
 					temperament: dogDb.Temperaments
 						? dogDb.Temperaments.map((el) => el.name).join(', ')
@@ -156,7 +156,7 @@ const getBreedById = async (id, origin) => {
                 id: perro.id,
                 name: perro.name,
                 height: perro.height.metric,
-                lifeSpan: perro.lifeSpan,
+                life_span: perro.life_span,
                 image: perro.image ? perro.image.url : " ",
                 temperament: perro.temperament,
                 weightMin: weightMin,
@@ -171,29 +171,41 @@ const getBreedById = async (id, origin) => {
     }
 };
 
-const createNewDog= async ( weightMin, weightMax, height, name, lifeSpan, image, temperament, created)=> {
-    if (!weightMin || !weightMax || !height || !name || !lifeSpan || !image || !temperament){
-    throw new Error("Missing information. Please, complete all the required data.")
+const createNewDog= async (
+    weightMin,
+    weightMax,
+    height,
+    name,
+    life_span,
+    image,
+    temperament,
+    created
+  ) => {
+    // si alguno de estos datos no existe entonces tirame el error
+    if (!weightMin || !weightMax || !height || !name || !life_span || !image || !temperament) {
+      throw new Error(
+        "Falta información, por favor, complete los datos requeridos."
+      );
+    } else {
+    //caso contrario creame el perrito con la data pasada
+      let newDog = await Dog.create({
+        name: name,
+        height: height,
+        life_span: life_span,
+        image: image,
+        weightMin: weightMin,
+        weightMax: weightMax,
+        averageWeight: (weightMax + weightMin) / 2,
+      });
+      let temp = await Temperament.findAll({
+        where: {
+          name: temperament,
+        },
+      });
+      await newDog.addTemperament(temp);
+      // le agregamos el temperamento al perrito
     }
-    else{
-        let newDog= await Dog.create({
-            name: name,
-			height: height,
-			lifeSpan: lifeSpan,
-			image: image,
-			weightMin: weightMin,
-			weightMax: weightMax,
-            averageWeight: (weightMax + weightMin) /2,
-        })
-        let temper= await Temperament.findAll({
-            where: {
-                name: temperament
-            }
-        })
-        await newDog.addTemperament(temper);
-    }
-    // return newDog
-};
+  };
 
 module.exports= {
     getBreeds,

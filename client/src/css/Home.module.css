@@ -1,0 +1,73 @@
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3f51b5;
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .navbar img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+
+  /* Estilos de la sección de filtros */
+  
+  .filterSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .filterSection select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+  }
+  
+  .filterSection select:first-child {
+    width: 250px;
+  }
+  
+  .filterSection select:last-child {
+    margin-right: 0;
+  }
+  
+  .filterSection option[disabled] {
+    color: #888;
+  }
+  
+  .filterSection option[selected] {
+    font-weight: bold;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  .buttonAllDogs{
+    padding: 10px 20px;
+    background-color: #3f51b5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  
+  .buttonAllDogs:hover {
+    background-color: #2c3e8c;
+  }
