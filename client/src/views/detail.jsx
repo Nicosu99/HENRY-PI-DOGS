@@ -5,31 +5,29 @@ import { useEffect } from 'react';
 import { useParams} from 'react-router-dom';
 import styles from "../css/Detail.module.css"
 
-
 const Detail = () => {
   let dispatch = useDispatch();
   let { id } = useParams();
   const dogDetail = useSelector((state) => state.dogDetail);
 
-  console.log(id);
   useEffect(() => {
     dispatch(getDogDetail(id))
     return()=>{
       dispatch(resetDetail())
     }
-  }, [dispatch])
+  }, [])
 
   return (
-    <div className='mainContainer-Detail'>
+    <div className={styles.mainContainer-Detail}>
       <img src={dogDetail?.image ? dogDetail.image : "img"} alt="img" />
       <h3>ID: {dogDetail?.id}</h3>
-      <h1>Raza: {dogDetail?.name}</h1>
-      <h3>Peso:</h3>
-      <span>Mínimo: {dogDetail?.weightMin}</span> - <span>Máximo: {dogDetail?.weightMax}</span>
-      <h3>Peso promedio: {dogDetail?.averageWeight}</h3>
-      <h3>Altura (mínimo - máximo): {dogDetail?.height}</h3> {/* sin el .metric me lo trae */}
-      <h3>Esperanza de Vida: {dogDetail?.life_span}</h3>
-      <h3>Temperamento: {dogDetail?.temperament}</h3>
+      <h1>Breed: {dogDetail?.name}</h1>
+      <h3>Weight:</h3>
+      <span>Min: {dogDetail?.weightMin}</span> - <span>Max: {dogDetail?.weightMax}</span>
+      <h3>Average weight: {dogDetail?.averageWeight}</h3>
+      <h3>Height (min - max): {dogDetail?.height}</h3> {/* sin el .metric me lo trae */}
+      <h3>Life expectancy : {dogDetail?.life_span}</h3>
+      <h3>Temperament: {dogDetail?.temperament}</h3>
     </div>
   )
 }

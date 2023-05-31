@@ -1,68 +1,134 @@
-/* styles.module.css */
-
-.container {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  input[type="text"],
-  select {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-  }
-  
-  span {
-    color: red;
-    font-size: 0.8rem;
-    margin-top: 0.25rem;
-    display: block;
-  }
-  
-  button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .temperament-container {
+.Formulario{
+    background-position: left;
+    background-size: 120%;
     display: flex;
-    align-items: center;
-    margin-top: 0.5rem;
-  }
-  
-  .temperament-container p {
-    margin-right: 0.5rem;
-  }
-  
-  .temperament-container button {
-    background-color: #dc3545;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.8rem;
-    color: #fff;
+    align-items: left;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    color: black;
+    width: auto;
+    border-radius: 20px;
+    height: 900px;
+    padding: 20px 0px 20px 100px;
+    font-family: 'Times New Roman', Times;
+    font-size: 23px;
+    font-weight: bold;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    width: 500px;
+    height: 20px;
+}
+.inputs input {
+    width: 470px;
+    height: 25px;
+    justify-content: center;
+}
+
+strong {
+    font-size: large;
+    color: black;
+    font-style: italic;
+    /* font-weight: 100; */
+}
+
+/* #score{
+    width: 60px;
+} */
+
+.temperaments{
+    /* background-color: #3f51b5; */
+    color: black;
+    /* border-radius: 20px;
+    border: black solid 1px; */
+    align-items: left ;
+    display: flex;
+    flex-direction: column;
+    width: 470px;
+    margin: 10px 0px 0px 0px;
+}
+
+.opciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    width: 90%;
+    background-color: bisque;
+    color: black
+}
+
+
+input {
+    border-radius: 8px;
     border: none;
+    margin: 10px 10px 0px 10px;
+    padding: 15px;
+}
+
+.button{
+    font-family: "Marker Felt", fantasy;
+    background-color: rgba(255, 255, 255, 0.884);
+    color: rgb(9, 9, 9);
+    border-radius: 4px;
     cursor: pointer;
-  }
-  
-  .temperament-container button:hover {
-    background-color: #c82333;
-  }
-  
-  
+    padding: 10px;
+    margin-top: 18px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease 0s;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.button:hover {
+    background-color: black;
+    color: #fff ;
+    border-radius: 4px;
+}
+
+
+.lista {
+    font-size: large;
+    align-items: center;
+}
+
+
+.toDeleteContainer {
+    display: flex;
+    margin-left: 160px;
+    margin-right: 40px;
+    justify-content: left;
+    align-items: center;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin: 10px;
+}
+
+.toDelete {
+    display: flex;
+    background-color: #3f51b5;
+    border-radius: 4px;
+    margin-top: 1%;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 120px;
+    padding: 5px;
+    font-weight: bold;
+    justify-content: space-evenly;
+}
+
+.toDelete button{
+    padding: 2px;
+}
+
+.toDelete button:hover{
+    transition: 0.3s;
+    background-color: red;
+    color: white;
+}

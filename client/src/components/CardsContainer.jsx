@@ -13,17 +13,18 @@ const CardsContainer = () => {
     const indexFirstDog = indexLastDog - dogsPerPage
     const currentDogs = dogs.slice(indexFirstDog,indexLastDog)
 
-    const pagination = (pageNumber) => {
-        setCurrentPage(pageNumber)
+    const pagination = (pageNumbers) => {
+        setCurrentPage(pageNumbers)
     }
 
     return(
         <div>
             <div>
-                <Pagination
-                dogsPerPage={dogsPerPage}
-                dogs={dogs.length}
-                pagination={pagination} />
+            <Pagination 
+            dogsPerPage={dogsPerPage} 
+            dogs={dogs.length} 
+            pagination={pagination} />
+
             </div>
             <div className={style.container}>
             {currentDogs.map((dog)=>{

@@ -7,6 +7,8 @@ import { useState } from "react";
 import { getAllBreeds, getAllTemperaments, setCurrentPage, filterByTemper, orderByName, orderByWeight, filterByOrigin } from "../redux/actions";
 import SearchBar from "../components/SearchBar";
 import styles from "../css/Home.module.css"
+import Pagination from "../components/Pagination";
+
 
 const Home = () => {
 
@@ -95,6 +97,10 @@ const Home = () => {
         })
       }
 
+          const pagination = (pageNumbers) => {
+        setCurrentPage(pageNumbers)
+    }
+
     useEffect(()=>{
         dispatch(getAllBreeds());
         dispatch(getAllTemperaments());
@@ -163,10 +169,8 @@ const Home = () => {
                 </section>
                 
             </div>
-            <CardsContainer/>
-            <div>
-                FOOTER
-            </div>
+            <CardsContainer />
+
         </div>
     )
 }
